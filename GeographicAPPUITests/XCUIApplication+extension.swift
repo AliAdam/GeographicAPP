@@ -53,7 +53,6 @@ extension XCTestCase {
     
     func wait(for duration: TimeInterval) {
         let waitExpectation = expectation(description: "Waiting")
-        
         let when = DispatchTime.now() + duration
         DispatchQueue.main.asyncAfter(deadline: when) {
             waitExpectation.fulfill()
@@ -70,7 +69,4 @@ struct AccessibilityIdentifier  {
     static let ItemMap = "ItemMap"
     static let ItemList = "ItemList"
     static let SplashView = "SplashView"
-    
-    
-    
 }

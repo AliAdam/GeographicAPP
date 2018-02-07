@@ -16,7 +16,8 @@ class SplashRouter:NSObject {
     override init() {
         super.init()
     }
-    // navigate to next screen collection screen
+    
+    // navigate to next screen item tabs screen
     func navigateToItemsListTab() {
         let itemsTabBarController = StoryboardScene.ItemsTabBarController.initialViewController()
         let itemsListController  = StoryboardScene.ItemsListController.initialViewController()
@@ -31,6 +32,8 @@ class SplashRouter:NSObject {
         
         controller?.navigationController?.setViewControllers([itemsTabBarController], animated: true)
     }
+    
+    
     // show alert controller
     func showParsingErrorAlert() {
         AlertControllerHelper.showAlert(withTitle: LocalizableWords.errorMessageTile, message: LocalizableWords.parseErrorMessage, on: controller!)
