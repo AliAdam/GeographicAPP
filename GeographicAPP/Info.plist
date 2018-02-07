@@ -20,6 +20,21 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>DMTask Want to use your location to monitor region</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>DMTask Want to use your location to monitor region</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Dubai-Regular.ttf</string>
+		<string>Dubai-Medium.ttf</string>
+		<string>Dubai-Bold.ttf</string>
+		<string>Dubai-Light.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -40,6 +55,10 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>telprompt</string>
 	</array>
 </dict>
 </plist>

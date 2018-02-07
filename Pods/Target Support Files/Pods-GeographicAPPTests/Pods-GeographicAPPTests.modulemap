@@ -1,0 +1,6 @@
+framework module Pods_GeographicAPPTests {
+  umbrella header "Pods-GeographicAPPTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
