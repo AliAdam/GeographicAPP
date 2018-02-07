@@ -18,7 +18,7 @@ struct LocalizableWords  {
     /// error messages and titles
     static let errorMessageTile = "Error Occured"
     static let parseErrorMessage = "Can Not Load And parse Please Try Again later"
-   static let gpsErrorMessage =  "GPS access is restricted. In order to use Monitor Region, please enable GPS in the Settigs app under Privacy, Location Services."
+   static let gpsErrorMessage =  "GPS access is restricted. In order to use Monitor Region, please enable Always GPS in the Settigs app under Privacy, Location Services."
     static let goToSettingMessage =  "Go to Settings now"
     static let list = "List"
     static let map = "Map"

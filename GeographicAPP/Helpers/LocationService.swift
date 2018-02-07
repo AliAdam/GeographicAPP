@@ -69,10 +69,10 @@ class LocationService: NSObject , CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("Exit region\(region.identifier)")
-        locationManager.stopMonitoring(for: region)
-        if locationManager.monitoredRegions.count < 2 {
-            self.locationManager?.startUpdatingLocation()
-        }
+        //locationManager.stopMonitoring(for: region)
+//        if locationManager.monitoredRegions.count < 2 {
+//            self.locationManager?.startUpdatingLocation()
+//        }
     }
     
     
@@ -91,7 +91,7 @@ class LocationService: NSObject , CLLocationManagerDelegate {
     
     func checkStatus()  {
         let status = CLLocationManager.authorizationStatus()
-        if  status == .denied  {
+        if  status == .denied || status == .authorizedWhenInUse  {
             // present an alert indicating location authorization required
             // and offer to take the user to Settings for the app via
             // UIApplication -openUrl: and UIApplicationOpenSettingsURLString

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-/// this extinsion to swizzling hitTest point function with my own implementation
+/// this extinsion to swizzling hitTest and  point function with my own implementation
 /// to detect clicks inside cells 
 private let swizzling: (AnyClass, Selector, Selector) -> () = { forClass, originalSelector, swizzledSelector in
     let originalMethod = class_getInstanceMethod(forClass, originalSelector)

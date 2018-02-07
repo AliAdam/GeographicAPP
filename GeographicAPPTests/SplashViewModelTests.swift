@@ -26,7 +26,6 @@ class SplashViewModelTests: XCTestCase {
     }
     
     func testSPViewModel() {
-        XCTAssertEqual(spViewModel.getItemList().count, 10, "returned items  should be equal to items on the mock up fils ")
         XCTAssertEqual(spViewModel.getItemList().count, spViewModel.itemsCount, "items  count  should be equal to number of items on the list")
     }
     

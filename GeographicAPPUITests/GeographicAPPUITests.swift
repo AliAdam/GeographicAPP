@@ -17,11 +17,8 @@ class GeographicAPPUITests: XCTestCase {
         app.launchArguments.append("--uitesting")
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
+ 
+    // test Screens and Buttons 
     func testGoingThroughAPP() {
         app.launch()
         // testing open first page
@@ -124,7 +121,11 @@ class GeographicAPPUITests: XCTestCase {
    
     }
     
-    
+   
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
    
     
 }
