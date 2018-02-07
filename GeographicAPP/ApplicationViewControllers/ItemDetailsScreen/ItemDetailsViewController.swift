@@ -148,11 +148,11 @@ class ItemDetailsViewController: FormViewController {
 extension ItemDetailsViewController: MFMailComposeViewControllerDelegate {
     
     func openUrl(url:URL){
-        
+        //  will open the url inside app with in  SFSafariViewController
+        // this is not the best soulution for sure i just use it on the task for it's simpelicity
             let vc = SFSafariViewController(url: url)
         vc.view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.safariView
         self.navigationController?.show(vc, sender: self)
-
     }
     
     func sendEmail(email:String) {
