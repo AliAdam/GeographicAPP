@@ -25,9 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>DMTask Want to use your location to monitor region</string>
+	<string>Want to use your location to monitor region</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>DMTask Want to use your location to monitor region</string>
+	<string>Want to use your location to monitor region</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Dubai-Regular.ttf</string>
