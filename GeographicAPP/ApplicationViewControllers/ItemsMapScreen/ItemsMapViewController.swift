@@ -31,7 +31,7 @@ class ItemsMapViewController: UIViewController,IndicatorInfoProvider  {
         self.mapView.delegate = self
         addPinToMap()
         MKAnnotationView.swizzlingMKAnnotationView
-        view.accessibilityIdentifier = "ItemMap"
+        view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemMap
         
     }
     func addPinToMap()  {

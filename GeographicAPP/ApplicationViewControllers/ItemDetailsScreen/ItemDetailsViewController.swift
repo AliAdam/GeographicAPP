@@ -27,7 +27,7 @@ class ItemDetailsViewController: FormViewController {
         super.viewDidLoad()
         // set the router controller
         router.controller = self
-        view.accessibilityIdentifier = "ItemDetails"
+        view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemDetails
         setUpForm()
     }
     
@@ -143,7 +143,7 @@ extension ItemDetailsViewController: MFMailComposeViewControllerDelegate {
     func openUrl(url:URL){
         
             let vc = SFSafariViewController(url: url)
-        vc.view.accessibilityIdentifier = "safariView"
+        vc.view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.safariView
         self.navigationController?.show(vc, sender: self)
 
     }
@@ -154,7 +154,7 @@ extension ItemDetailsViewController: MFMailComposeViewControllerDelegate {
             return
         }
         let composeVC = MFMailComposeViewController()
-        composeVC.view.accessibilityIdentifier = "MailComposeView"
+        composeVC.view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.MailComposeView
         composeVC.mailComposeDelegate = self
         composeVC.setToRecipients([email])
         composeVC.setSubject("")

@@ -27,7 +27,7 @@ class ItemsListViewController: UIViewController,IndicatorInfoProvider  {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-        view.accessibilityIdentifier = "ItemList"
+        view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemList
 
 
 

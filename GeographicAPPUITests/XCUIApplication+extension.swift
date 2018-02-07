@@ -7,31 +7,32 @@
 //
 
 import XCTest
+@testable import GeographicAPP
 
 extension XCUIApplication {
     var isDisplayingSpalsh: Bool {
-        return otherElements["SplashView"].exists
+        return otherElements[LocalizableWords.AccessibilityIdentifier.SplashView].exists
     }
     var isDisplayingItemsTabBar: Bool {
-        return otherElements["ItemsTabBar"].exists
+        return otherElements[LocalizableWords.AccessibilityIdentifier.ItemsTabBar].exists
     }
     var isDisplayingItemsMap: Bool {
-        return otherElements["ItemMap"].exists
+        return otherElements[LocalizableWords.AccessibilityIdentifier.ItemMap].exists
     }
     var isDisplayingItemList: Bool {
-        return otherElements["ItemList"].exists
+        return otherElements[LocalizableWords.AccessibilityIdentifier.ItemList].exists
     }
     
     var isDisplayingItemDetails: Bool {
-        return otherElements["ItemDetails"].exists
+        return otherElements[LocalizableWords.AccessibilityIdentifier.ItemDetails].exists
     }
     var isDisplayingsafariView: Bool {
-        return otherElements["safariView"].exists
+        return otherElements[LocalizableWords.AccessibilityIdentifier.safariView].exists
     }
     
     
     var isDisplayingMailComposeView: Bool {
-        return otherElements["MailComposeView"].exists
+        return otherElements[LocalizableWords.AccessibilityIdentifier.MailComposeView].exists
     }
 
 }

@@ -25,7 +25,7 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTap()
-        view.accessibilityIdentifier = "ItemsTabBar"
+        view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemsTabBar
       
     }
     override func viewWillAppear(_ animated: Bool) {

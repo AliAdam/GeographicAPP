@@ -24,7 +24,6 @@ struct LocalizableWords  {
     static let map = "Map"
     static let WelcomeMessage =  "Welcome to"
     static let emailerrorMessage =  "Can not send email"
-    
     static let name = "Name"
     static let country = "Country"
     static let city = "City"
@@ -33,6 +32,19 @@ struct LocalizableWords  {
     static let location = "Location"
     static let url = "URL"
 
+    
+    struct AccessibilityIdentifier  {
+         static let ItemsTabBar = "ItemsTabBar"
+        static let ItemDetails = "ItemDetails"
+        static let safariView = "safariView"
+        static let MailComposeView = "MailComposeView"
+        static let ItemMap = "ItemMap"
+        static let ItemList = "ItemList"
+        static let SplashView = "SplashView"
+
+
+
+    }
 
 
     

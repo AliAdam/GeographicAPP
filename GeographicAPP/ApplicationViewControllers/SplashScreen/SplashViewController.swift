@@ -22,7 +22,7 @@ class SplashViewController: UIViewController  {
         startAnimatedView()
         router.controller = self
         self.navigationController?.isNavigationBarHidden = true
-        view.accessibilityIdentifier = "SplashView"
+        view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.SplashView
 
 
     }
