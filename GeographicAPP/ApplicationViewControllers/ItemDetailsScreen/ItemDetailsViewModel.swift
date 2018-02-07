@@ -35,6 +35,9 @@ class ItemDetailsViewModel :NSObject{
         return self.item?.phone ?? ""
     }
     
+    var type:String {
+        return self.item?.type ?? ""
+    }
     
     var email:String {
         return self.item?.email ?? ""

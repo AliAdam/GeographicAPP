@@ -94,6 +94,11 @@ class ItemDetailsViewController: FormViewController {
                 $0.value = self.viewModel.cityName
             }
             
+            <<< LabelRow (LocalizableWords.type) {
+                $0.title = LocalizableWords.type
+                $0.value = self.viewModel.type
+            }
+            
             <<< EmailRow (LocalizableWords.email) {
                 $0.title = LocalizableWords.email
                 $0.value = self.viewModel.email

@@ -33,6 +33,7 @@ struct LocalizableWords  {
     static let phone = "Phone"
     static let location = "Location"
     static let url = "URL"
+    static let type = "Type"
     static let locationsTilte = "locations"
     
     
