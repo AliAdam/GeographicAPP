@@ -235,15 +235,12 @@
 			isa = PBXGroup;
 			children = (
 				41EAC1E62029D79200A47D9D /* ApplicationViewControllers */,
+				41EAC1E02029D79200A47D9D /* Views */,
 				41EAC1D62029D79200A47D9D /* Helpers */,
 				41EAC1E32029D79200A47D9D /* Models */,
 				41EAC1D02029D79100A47D9D /* Network */,
 				41EAC1D42029D79100A47D9D /* Resources */,
-				41EAC1E02029D79200A47D9D /* Views */,
 				41EAC1BE2029D73F00A47D9D /* AppDelegate.swift */,
-				41EAC1C22029D73F00A47D9D /* Main.storyboard */,
-				41EAC1C52029D73F00A47D9D /* Assets.xcassets */,
-				41EAC1C72029D73F00A47D9D /* LaunchScreen.storyboard */,
 				41EAC1CA2029D73F00A47D9D /* Info.plist */,
 			);
 			path = GeographicAPP;
@@ -262,6 +259,7 @@
 		41EAC1D42029D79100A47D9D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				41EAC1C52029D73F00A47D9D /* Assets.xcassets */,
 				41EAC2272029E57700A47D9D /* Font */,
 				41EAC1D52029D79100A47D9D /* DMLocations.json */,
 				412C2BD0202A3B4C0041A7AB /* Location.gpx */,
@@ -294,6 +292,8 @@
 		41EAC1E02029D79200A47D9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41EAC1C22029D73F00A47D9D /* Main.storyboard */,
+				41EAC1C72029D73F00A47D9D /* LaunchScreen.storyboard */,
 				41EAC2052029DF5C00A47D9D /* HomeTabCell */,
 				41EAC2312029F84E00A47D9D /* ItemCell */,
 			);

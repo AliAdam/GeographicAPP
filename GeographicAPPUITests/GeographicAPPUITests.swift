@@ -108,14 +108,15 @@ class GeographicAPPUITests: XCTestCase {
         navButtons = app.navigationBars.buttons
         XCTAssert(navButtons.count > 0)
         navButtons.element(boundBy: 0).tap()
-        wait(for: 1)
+        wait(for: 2)
        app.sheets.buttons.element(boundBy: 0).tap()
         wait(for: 1)
         XCTAssertTrue(app.isDisplayingItemDetails)
         
-        // call phone
+        // call phone item details
         tablesQuery.cells.element(boundBy: tablesQuery.cells.count-3).tap()
          wait(for: 1)
+            
         #endif
 
    

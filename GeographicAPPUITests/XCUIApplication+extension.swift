@@ -7,32 +7,31 @@
 //
 
 import XCTest
-@testable import GeographicAPP
 
 extension XCUIApplication {
     var isDisplayingSpalsh: Bool {
-        return otherElements[LocalizableWords.AccessibilityIdentifier.SplashView].exists
+        return otherElements[AccessibilityIdentifier.SplashView].exists
     }
     var isDisplayingItemsTabBar: Bool {
-        return otherElements[LocalizableWords.AccessibilityIdentifier.ItemsTabBar].exists
+        return otherElements[AccessibilityIdentifier.ItemsTabBar].exists
     }
     var isDisplayingItemsMap: Bool {
-        return otherElements[LocalizableWords.AccessibilityIdentifier.ItemMap].exists
+        return otherElements[AccessibilityIdentifier.ItemMap].exists
     }
     var isDisplayingItemList: Bool {
-        return otherElements[LocalizableWords.AccessibilityIdentifier.ItemList].exists
+        return otherElements[AccessibilityIdentifier.ItemList].exists
     }
     
     var isDisplayingItemDetails: Bool {
-        return otherElements[LocalizableWords.AccessibilityIdentifier.ItemDetails].exists
+        return otherElements[AccessibilityIdentifier.ItemDetails].exists
     }
     var isDisplayingsafariView: Bool {
-        return otherElements[LocalizableWords.AccessibilityIdentifier.safariView].exists
+        return otherElements[AccessibilityIdentifier.safariView].exists
     }
     
     
     var isDisplayingMailComposeView: Bool {
-        return otherElements[LocalizableWords.AccessibilityIdentifier.MailComposeView].exists
+        return otherElements[AccessibilityIdentifier.MailComposeView].exists
     }
 
 }
@@ -61,4 +60,17 @@ extension XCTestCase {
         }
         waitForExpectations(timeout: duration + 0.5)
     }
+}
+
+struct AccessibilityIdentifier  {
+    static let ItemsTabBar = "ItemsTabBar"
+    static let ItemDetails = "ItemDetails"
+    static let safariView = "safariView"
+    static let MailComposeView = "MailComposeView"
+    static let ItemMap = "ItemMap"
+    static let ItemList = "ItemList"
+    static let SplashView = "SplashView"
+    
+    
+    
 }

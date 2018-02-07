@@ -1,5 +1,5 @@
 //
-//  t.swift
+//  ItemDetailsViewControllerTest.swift
 //  GeographicAPPTests
 //
 //  Created by ali adam on 2/7/18.

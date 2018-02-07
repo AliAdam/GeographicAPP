@@ -28,7 +28,7 @@ class ItemCell: UITableViewCell {
         nameLabel.font = FontManager.APPMedium.fontWith(size:16)
         countryLabel.font = FontManager.APPRegular.fontWith(size:15)
         cityLabel.font = FontManager.APPLight.fontWith(size:15)
-        phoneLabel.font = FontManager.APPLight.fontWith(size:15)
+        phoneLabel.font = FontManager.APPBold.fontWith(size:15)
         nameLabel.textColor = Colors.brandColor.withAlphaComponent(0.8)
         countryLabel.textColor = Colors.accentBrown.withAlphaComponent(0.8)
         cityLabel.textColor = Colors.brandGray.withAlphaComponent(0.8)

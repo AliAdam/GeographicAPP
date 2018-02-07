@@ -26,6 +26,10 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = LocalizableWords.locationsTilte
+        let textAttributes:[NSAttributedStringKey:Any]? = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):Colors.whiteColor, NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):FontManager.APPLight.fontWith(size: 20)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+
         self.setUpTap()
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemsTabBar
       

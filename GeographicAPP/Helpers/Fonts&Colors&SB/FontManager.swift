@@ -24,7 +24,7 @@ enum FontManager:String {
         case .APPRegular: return "Dubai-Regular"
         case .APPMedium: return "Dubai-Medium"
         case .APPLight: return "Dubai-Light"
-        case .APPBold: return "Dubai-SemiBold"
+        case .APPBold: return "Dubai-Bold"
         }
     }
     
@@ -33,7 +33,7 @@ enum FontManager:String {
         case .APPRegular: return "Dubai-Regular"
         case .APPMedium: return "Dubai-Medium"
         case .APPLight: return "Dubai-Light"
-        case .APPBold: return "Dubai-SemiBold"
+        case .APPBold: return "Dubai-Bold"
         }
     }
     

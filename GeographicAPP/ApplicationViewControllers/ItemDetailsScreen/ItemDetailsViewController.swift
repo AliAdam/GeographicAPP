@@ -25,6 +25,8 @@ class ItemDetailsViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title =  self.viewModel.itemName
+
         // set the router controller
         router.controller = self
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemDetails
