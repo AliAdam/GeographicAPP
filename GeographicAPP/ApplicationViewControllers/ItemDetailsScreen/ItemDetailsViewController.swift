@@ -31,6 +31,7 @@ class ItemDetailsViewController: FormViewController {
         setUpForm()
     }
     
+    // create a form  to show details on it
     func setUpForm()  {
         
         URLRow.defaultCellUpdate = { cell, row in
@@ -140,6 +141,7 @@ class ItemDetailsViewController: FormViewController {
 
 
 extension ItemDetailsViewController: MFMailComposeViewControllerDelegate {
+    
     func openUrl(url:URL){
         
             let vc = SFSafariViewController(url: url)
@@ -147,6 +149,7 @@ extension ItemDetailsViewController: MFMailComposeViewControllerDelegate {
         self.navigationController?.show(vc, sender: self)
 
     }
+    
     func sendEmail(email:String) {
         if !MFMailComposeViewController.canSendMail() {
             print("Mail services are not available")

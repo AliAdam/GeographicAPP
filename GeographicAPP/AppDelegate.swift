@@ -15,9 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let locationService = LocationService.default
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         setAppearance()
         SetUpNotificationCenter()
+        
         if CommandLine.arguments.contains("--uitesting") {
             resetState()
         }
@@ -38,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
 
     }
+    
     func resetState() {
         let defaultsName = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: defaultsName)

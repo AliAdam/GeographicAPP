@@ -17,22 +17,24 @@ class ItemsListViewController: UIViewController,IndicatorInfoProvider  {
     
     @IBOutlet weak var tableView: UITableView!
 
-
+    // this var hold tap item info title and image 
     var itemInfo: IndicatorInfo = "List"
+    
+    
+    // set viewModel and router and itemIinfo
     func set(itemInfo: IndicatorInfo,andViewModel viewModel:ItemsListViewModel, andRouterController routerController: UIViewController) {
         self.itemInfo = itemInfo
         self.viewModel = viewModel
         router.controller = routerController
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemList
-
-
-
     }
     
+    // register nib and set register
     func setTableView()  {
         tableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
@@ -47,10 +49,11 @@ class ItemsListViewController: UIViewController,IndicatorInfoProvider  {
         return itemInfo
     }
 }
+
+
 // MARK: - UITableViewDelegate
 
 extension ItemsListViewController: UITableViewDataSource,UITableViewDelegate {
-    // MARK:- UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -64,10 +67,15 @@ extension ItemsListViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ItemCell.height()
     }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell")! as! ItemCell
         let item = self.viewModel.itemAtIndex(index:indexPath.item)
+        
+        // configure cell With its item 
         cell.configureWith(item: item)
+        
         cell.cellTapHandler  = {[weak self ] cell in
             let index =  self?.tableView.indexPath(for: cell)
             self?.userClickItem(atIndex: (index?.item)!)
@@ -76,6 +84,7 @@ extension ItemsListViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     
+    // user click on cell  to go to details page
     func userClickItem(atIndex :Int) {
         print("\(atIndex) ")
         let item = self.viewModel.itemAtIndex(index:atIndex)

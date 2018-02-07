@@ -26,7 +26,6 @@ struct NetworkProvider {
 
             let decoder = JSONDecoder()
             let itemsList = try decoder.decode([Item].self, from: data)
-            //print(itemsList)
             completionHandler(.success(itemsList))
         } catch {
             completionHandler(.error(APPError.couldNotParseJson))

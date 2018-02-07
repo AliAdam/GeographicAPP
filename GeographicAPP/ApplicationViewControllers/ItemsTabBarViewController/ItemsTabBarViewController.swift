@@ -3,9 +3,10 @@
 import Foundation
 import XLPagerTabStrip
 
+/// controller that hold item list and map screen
 class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeTabCell> {
 
-    
+    // array of viewController will appear on the tab controller 
    private var childControllers : [UIViewController]!
     
     func setControllers(childControllers:[UIViewController])  {
@@ -17,6 +18,7 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+        // load tab cell nib file
         buttonBarItemSpec = ButtonBarItemSpec.nibFile(nibName: "HomeTabCell", bundle: Bundle(for: HomeTabCell.self), width: { _ in
             return (UIScreen.main.bounds.width / 2) - 40
         })
@@ -39,6 +41,7 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
         return Array(self.childControllers)
     }
 
+    // confgure tap cell
     override func configure(cell: HomeTabCell, for indicatorInfo: IndicatorInfo) {
         cell.iconImage.image = indicatorInfo.image?.withRenderingMode(.alwaysTemplate)
         cell.titleLab.text = indicatorInfo.title
@@ -49,6 +52,7 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
 
     }
     
+    // setup tap bar apperance
     func setUpTap() {
         settings.style.buttonBarBackgroundColor = Colors.whiteColor
         settings.style.buttonBarItemBackgroundColor = Colors.whiteColor

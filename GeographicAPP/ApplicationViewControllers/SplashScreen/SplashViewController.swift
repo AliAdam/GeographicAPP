@@ -28,34 +28,14 @@ class SplashViewController: UIViewController  {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       // DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+        // load items list
             self.loadData()
-       // })
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    func startAnimatedView(){
-        self.animatedView.backgroundColor = Colors.brandColor
-        self.animatedView.alpha = 0.4
-        self.animatedView.layer.cornerRadius = self.animatedView.frame.size.width/2
-        animateView()
 
-    }
-    
-    func animateView(){
-        UIView.animate(withDuration: 2.0, animations: {
-            self.animatedView.alpha = 0.2
-            self.animatedView.transform = CGAffineTransform(scaleX: 100, y: 100)
-        }) { success in
-            self.animatedView.transform = .identity
-            self.animateView()
-        }
-    }
-    
     /// load item list and navigate to collection view on sucess
     // show error on fail
     func loadData()  {
@@ -69,6 +49,26 @@ class SplashViewController: UIViewController  {
             }
         }
     }
+    
+    // add simple pulse animation to the view 
+    func startAnimatedView(){
+        self.animatedView.backgroundColor = Colors.brandColor
+        self.animatedView.alpha = 0.4
+        self.animatedView.layer.cornerRadius = self.animatedView.frame.size.width/2
+        animateView()
+        
+    }
+    
+    func animateView(){
+        UIView.animate(withDuration: 2.0, animations: {
+            self.animatedView.alpha = 0.2
+            self.animatedView.transform = CGAffineTransform(scaleX: 100, y: 100)
+        }) { success in
+            self.animatedView.transform = .identity
+            self.animateView()
+        }
+    }
+    
     
     /// get item list to pass it to the new viewmodel of next screen
     func getItemList() -> [Item] {

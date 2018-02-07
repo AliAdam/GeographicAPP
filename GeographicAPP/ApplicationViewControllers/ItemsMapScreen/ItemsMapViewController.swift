@@ -29,11 +29,20 @@ class ItemsMapViewController: UIViewController,IndicatorInfoProvider  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
+        
         addPinToMap()
+        
+        // swizzling MKAnnotationView to detect click on the cell
+        // to support calls and go to details page
         MKAnnotationView.swizzlingMKAnnotationView
+        
+        
+        // this is for UI testing
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemMap
         
     }
+    
+    // add items to the map and zoom to show most of them
     func addPinToMap()  {
         for i in 0..<self.viewModel.numberOfElement {
             let location = self.viewModel.locationForItemAtIndex(index:i)
@@ -71,9 +80,10 @@ extension ItemsMapViewController: MKMapViewDelegate
         
         if view.annotation is MKUserLocation
         {
-            // Don't proceed with custom callout
             return
         }
+        /// load item cell and add it as calloutView
+        ///
         let views = Bundle.main.loadNibNamed("ItemCell", owner: nil, options: nil)
         let calloutView = views?[0] as! ItemCell
         let index = (view.annotation!.title! as! NSString ).integerValue
@@ -89,16 +99,20 @@ extension ItemsMapViewController: MKMapViewDelegate
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
     
     }
+    
+    
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
             for subview in view.subviews
             {
                 if subview.isKind(of: ItemCell.self)
                 {
+                    // remove cell on deselect
                 subview.removeFromSuperview()
                 }
             }
     }
     
+    // user click to go to details page 
     func userClickItem(atIndex :Int) {
         print("\(atIndex) ")
         let item = self.viewModel.itemAtIndex(index:atIndex)

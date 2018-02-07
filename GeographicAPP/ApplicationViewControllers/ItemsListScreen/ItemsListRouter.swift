@@ -15,6 +15,7 @@ class ItemsListRouter:NSObject {
     override init() {
         super.init()
     }
+    
     func showDetailsScreen(item:Item) {
         let nextController = StoryboardScene.ItemDetailsController.initialViewController()
         let viewModel = ItemDetailsViewModel(item: item)

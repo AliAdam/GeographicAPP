@@ -11,6 +11,7 @@ import Eureka
 import MapKit
 
 
+/// MapViewController used to show on point on the map from a Eureka form cell 
 public class MapViewController : UIViewController, TypedRowControllerType, MKMapViewDelegate {
     
     public var row: RowOf<CLLocation>!

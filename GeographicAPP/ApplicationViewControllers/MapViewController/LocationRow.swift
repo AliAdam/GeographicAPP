@@ -13,6 +13,7 @@ import MapKit
 
 //MARK: LocationRow
 
+// location row custom row to add location cell on Eureka form  this is used on item details screen 
 public final class LocationRow: OptionsRow<PushSelectorCell<CLLocation>>, PresenterRowType, RowType {
     
     public typealias PresenterRow = MapViewController
