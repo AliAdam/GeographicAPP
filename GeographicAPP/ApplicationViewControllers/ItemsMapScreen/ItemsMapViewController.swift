@@ -84,7 +84,7 @@ extension ItemsMapViewController: MKMapViewDelegate
         }
         /// load item cell and add it as calloutView
         ///
-        let views = Bundle.main.loadNibNamed("ItemCell", owner: nil, options: nil)
+        let views = Bundle.main.loadNibNamed(ItemCell.cellIdentifier(), owner: nil, options: nil)
         let calloutView = views?[0] as! ItemCell
         let index = (view.annotation!.title! as! NSString ).integerValue
         let item =  self.viewModel.itemAtIndex(index: index)

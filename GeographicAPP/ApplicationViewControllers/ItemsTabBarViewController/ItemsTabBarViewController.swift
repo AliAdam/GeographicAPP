@@ -19,7 +19,7 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
         super.init(coder: aDecoder)
         
         // load tab cell nib file
-        buttonBarItemSpec = ButtonBarItemSpec.nibFile(nibName: "HomeTabCell", bundle: Bundle(for: HomeTabCell.self), width: { _ in
+        buttonBarItemSpec = ButtonBarItemSpec.nibFile(nibName: HomeTabCell.cellIdentifier(), bundle: Bundle(for: HomeTabCell.self), width: { _ in
             return (UIScreen.main.bounds.width / 2) - 40
         })
     }

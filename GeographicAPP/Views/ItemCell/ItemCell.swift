@@ -52,6 +52,10 @@ class ItemCell: UITableViewCell {
         return 145
     }
     
+    open class func cellIdentifier() -> String {
+        return "ItemCell"
+    }
+    
     // MARK - Action Handler
     @IBAction func callPhoneNumber(_ sender: Any) {
         let res =  phoneLabel.text!.call()

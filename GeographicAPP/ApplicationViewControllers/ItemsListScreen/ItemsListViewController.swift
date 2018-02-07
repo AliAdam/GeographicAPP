@@ -36,8 +36,8 @@ class ItemsListViewController: UIViewController,IndicatorInfoProvider  {
     
     // register nib and set register
     func setTableView()  {
-        tableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
-        tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
+        tableView.register(ItemCell.self, forCellReuseIdentifier: ItemCell.cellIdentifier())
+        tableView.register(UINib(nibName: ItemCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: ItemCell.cellIdentifier())
         tableView.backgroundColor = Colors.brandGray.withAlphaComponent(0.4)
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -70,7 +70,7 @@ extension ItemsListViewController: UITableViewDataSource,UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell")! as! ItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ItemCell.cellIdentifier())! as! ItemCell
         let item = self.viewModel.itemAtIndex(index:indexPath.item)
         
         // configure cell With its item 
