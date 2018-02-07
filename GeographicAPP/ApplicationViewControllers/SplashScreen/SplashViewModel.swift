@@ -8,7 +8,7 @@
 
 import  Foundation
 class SplashViewModel :NSObject{
-
+    
     fileprivate var itemsList : [Item]?
     override init() {
         super.init()
@@ -32,7 +32,7 @@ class SplashViewModel :NSObject{
     
     func monitorRegions() {
         LocationService.default.monitorRegions(items: (self.itemsList)!)
-
+        
     }
     var itemsCount :Int {
         return (self.itemsList?.count)!

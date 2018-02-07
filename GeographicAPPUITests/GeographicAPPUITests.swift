@@ -9,7 +9,7 @@
 import XCTest
 
 class GeographicAPPUITests: XCTestCase {
-        var app: XCUIApplication!
+    var app: XCUIApplication!
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
@@ -17,7 +17,7 @@ class GeographicAPPUITests: XCTestCase {
         app.launchArguments.append("--uitesting")
     }
     
- 
+    
     // test Screens and Buttons 
     func testGoingThroughAPP() {
         app.launch()
@@ -40,7 +40,7 @@ class GeographicAPPUITests: XCTestCase {
         // test opening map screen
         collectionQuery.cells.element(boundBy: 1).tap()
         wait(for: 1)
-         XCTAssertTrue(app.isDisplayingItemsMap)
+        XCTAssertTrue(app.isDisplayingItemsMap)
         
         
         
@@ -48,7 +48,7 @@ class GeographicAPPUITests: XCTestCase {
         collectionQuery.cells.element(boundBy: 0).tap()
         wait(for: 1)
         XCTAssertTrue(app.isDisplayingItemList)
-
+        
         
         // test open item details
         tablesQuery.cells.element(boundBy: 0).tap()
@@ -74,24 +74,24 @@ class GeographicAPPUITests: XCTestCase {
             alert.buttons["Cancel"].tap()
             return true
         }
-
+        
         #if !((arch(i386) || arch(x86_64)) && os(iOS))
             /// test call phone  button
             let firstCell = tablesQuery.cells.element(boundBy: 0)
             firstCell.buttons.element(boundBy: 0).forceTapElement()
             wait(for: 1)
         #endif
-
-
+        
+        
         
         // test open url
         tablesQuery.cells.element(boundBy: 0).tap()
         wait(for: 1)
         XCTAssertTrue(app.isDisplayingItemDetails)
-         tablesQuery = app.tables
-         tablesQuery.cells.element(boundBy: tablesQuery.cells.count-2).tap()
+        tablesQuery = app.tables
+        tablesQuery.cells.element(boundBy: tablesQuery.cells.count-2).tap()
         wait(for: 1)
-         XCTAssertTrue(app.isDisplayingsafariView)
+        XCTAssertTrue(app.isDisplayingsafariView)
         navButtons = app.navigationBars.buttons
         XCTAssert(navButtons.count == 1)
         navButtons.element(boundBy: 0).tap()
@@ -101,33 +101,33 @@ class GeographicAPPUITests: XCTestCase {
         
         
         #if !((arch(i386) || arch(x86_64)) && os(iOS))
-        // test send mail
-        tablesQuery.cells.element(boundBy: tablesQuery.cells.count-4).tap()
-        wait(for: 1)
-        XCTAssertTrue(app.isDisplayingMailComposeView)
-        navButtons = app.navigationBars.buttons
-        XCTAssert(navButtons.count > 0)
-        navButtons.element(boundBy: 0).tap()
-        wait(for: 2)
-       app.sheets.buttons.element(boundBy: 0).tap()
-        wait(for: 1)
-        XCTAssertTrue(app.isDisplayingItemDetails)
-        
-        // call phone item details
-        tablesQuery.cells.element(boundBy: tablesQuery.cells.count-3).tap()
-         wait(for: 1)
+            // test send mail
+            tablesQuery.cells.element(boundBy: tablesQuery.cells.count-4).tap()
+            wait(for: 1)
+            XCTAssertTrue(app.isDisplayingMailComposeView)
+            navButtons = app.navigationBars.buttons
+            XCTAssert(navButtons.count > 0)
+            navButtons.element(boundBy: 0).tap()
+            wait(for: 2)
+            app.sheets.buttons.element(boundBy: 0).tap()
+            wait(for: 1)
+            XCTAssertTrue(app.isDisplayingItemDetails)
+            
+            // call phone item details
+            tablesQuery.cells.element(boundBy: tablesQuery.cells.count-3).tap()
+            wait(for: 1)
             
         #endif
-
-   
+        
+        
     }
     
-   
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-   
+    
     
 }
 

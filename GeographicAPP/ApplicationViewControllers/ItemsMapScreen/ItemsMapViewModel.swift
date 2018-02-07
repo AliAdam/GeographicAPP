@@ -9,7 +9,7 @@
 import  Foundation
 import CoreLocation
 class ItemsMapViewModel :NSObject{
-
+    
     fileprivate var itemsList : [Item]?
     override init() {
         super.init()
@@ -34,8 +34,8 @@ class ItemsMapViewModel :NSObject{
     func locationForItemAtIndex(index:Int) -> CLLocationCoordinate2D {
         return self.itemsList![index].location!
     }
-
- 
+    
+    
     
     
 }

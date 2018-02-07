@@ -41,21 +41,21 @@ class LocationService: NSObject , CLLocationManagerDelegate {
     
     
     func handleRegionEvent(region: CLRegion) {
-            // Otherwise present a Local Notification
+        // Otherwise present a Local Notification
         
-            let content = UNMutableNotificationContent()
-            content.title = NSString.localizedUserNotificationString(forKey: LocalizableWords.WelcomeMessage,arguments: nil)
-            content.body = NSString.localizedUserNotificationString(forKey: region.identifier, arguments: nil)
-            content.sound = UNNotificationSound.default()
-          content.setValue(true, forKey: "shouldAlwaysAlertWhileAppIsForeground")
-            content.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber;
-            content.categoryIdentifier = Bundle.main.bundleIdentifier!
-            // Deliver the notification in five seconds.
-            let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 1, repeats: false)
-            let request = UNNotificationRequest.init(identifier: region.identifier, content: content, trigger: trigger)
-            // Schedule the notification.
-            let center = UNUserNotificationCenter.current()
-            center.add(request)
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: LocalizableWords.WelcomeMessage,arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: region.identifier, arguments: nil)
+        content.sound = UNNotificationSound.default()
+        content.setValue(true, forKey: "shouldAlwaysAlertWhileAppIsForeground")
+        content.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber;
+        content.categoryIdentifier = Bundle.main.bundleIdentifier!
+        // Deliver the notification in five seconds.
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest.init(identifier: region.identifier, content: content, trigger: trigger)
+        // Schedule the notification.
+        let center = UNUserNotificationCenter.current()
+        center.add(request)
     }
     
     
@@ -70,16 +70,16 @@ class LocationService: NSObject , CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("Exit region\(region.identifier)")
         //locationManager.stopMonitoring(for: region)
-//        if locationManager.monitoredRegions.count < 2 {
-//            self.locationManager?.startUpdatingLocation()
-//        }
+        //        if locationManager.monitoredRegions.count < 2 {
+        //            self.locationManager?.startUpdatingLocation()
+        //        }
     }
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Object that is being updated
         print(locations.first!)
-       currentLocation =  locations.first!
+        currentLocation =  locations.first!
     }
     
     
@@ -150,13 +150,13 @@ class LocationService: NSObject , CLLocationManagerDelegate {
         // Remove all regions you were tracking before
         for region in locationManager.monitoredRegions{
             let reg = twentyNearbyRegions.filter({$0.0.name! == region.identifier})
-        if reg.count == 1
-        {
-            let index = twentyNearbyRegions.index(where: {$0.0.name! == reg.first?.0.name! })
-            twentyNearbyRegions.remove(at: index!)
-                        }
-        else {
-           locationManager.stopMonitoring(for: region)
+            if reg.count == 1
+            {
+                let index = twentyNearbyRegions.index(where: {$0.0.name! == reg.first?.0.name! })
+                twentyNearbyRegions.remove(at: index!)
+            }
+            else {
+                locationManager.stopMonitoring(for: region)
             }
         }
         

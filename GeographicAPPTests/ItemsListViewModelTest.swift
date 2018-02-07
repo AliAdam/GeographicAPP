@@ -11,7 +11,7 @@ import XCTest
 
 class ItemsViewModelTest: XCTestCase {
     let items = MockData.items
-     var iTViewModel : ItemsListViewModel!
+    var iTViewModel : ItemsListViewModel!
     var iMViewModel : ItemsMapViewModel!
     override func setUp() {
         super.setUp()
@@ -30,7 +30,7 @@ class ItemsViewModelTest: XCTestCase {
         XCTAssertEqual(iTViewModel.itemAtIndex(index: 0).locationID!, items.first?.locationID!, "item returned should be equal to the paased item")
         XCTAssertEqual(iTViewModel.itemAtIndex(index: 0).location?.latitude, items.first?.latitude!, "item location lat should equal item lat")
         XCTAssertEqual(iTViewModel.itemAtIndex(index: 0).location?.longitude, items.first?.longitude!, "item location lon should equal item lon")
-
+        
     }
     
     func testIMViewModel() {
@@ -38,7 +38,7 @@ class ItemsViewModelTest: XCTestCase {
         XCTAssertEqual(iMViewModel.itemAtIndex(index: 0).locationID!, items.first?.locationID!, "item returned should be equal to the paased item")
         XCTAssertEqual(iMViewModel.itemAtIndex(index: 0).location?.latitude, items.first?.latitude!, "item location lat should equal item lat")
         XCTAssertEqual(iMViewModel.itemAtIndex(index: 0).location?.longitude, items.first?.longitude!, "item location lon should equal item lon")
-
+        
     }
     
     func testIMViewModelAndITViewModel() {

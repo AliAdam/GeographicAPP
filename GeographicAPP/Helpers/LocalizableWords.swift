@@ -18,14 +18,14 @@ struct LocalizableWords  {
     /// error messages and titles
     static let errorMessageTile = "Error Occured"
     static let parseErrorMessage = "Can Not Load And parse Please Try Again later"
-   static let gpsErrorMessage =  "GPS access is restricted. In order to use Monitor Region, please enable Always GPS in the Settigs app under Privacy, Location Services."
+    static let gpsErrorMessage =  "GPS access is restricted. In order to use Monitor Region, please enable Always GPS in the Settigs app under Privacy, Location Services."
     static let goToSettingMessage =  "Go to Settings now"
     static let list = "List"
     static let map = "Map"
     static let WelcomeMessage =  "Welcome to"
     static let emailerrorMessage =  "Can not send email"
     static let phoneerrorMessage =  "Can not call phone"
-
+    
     static let name = "Name"
     static let country = "Country"
     static let city = "City"
@@ -34,24 +34,24 @@ struct LocalizableWords  {
     static let location = "Location"
     static let url = "URL"
     static let locationsTilte = "locations"
-
     
-
+    
+    
     
     struct AccessibilityIdentifier  {
-         static let ItemsTabBar = "ItemsTabBar"
+        static let ItemsTabBar = "ItemsTabBar"
         static let ItemDetails = "ItemDetails"
         static let safariView = "safariView"
         static let MailComposeView = "MailComposeView"
         static let ItemMap = "ItemMap"
         static let ItemList = "ItemList"
         static let SplashView = "SplashView"
-
-
-
+        
+        
+        
     }
-
-
+    
+    
     
 }
 

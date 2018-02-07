@@ -16,7 +16,7 @@ class ItemsMapViewController: UIViewController,IndicatorInfoProvider  {
     var itemInfo: IndicatorInfo = "Map"
     // contrroler router to navigate to other controller or show messages
     @IBOutlet var router: ItemsMapRouter!
-
+    
     @IBOutlet weak var mapView: MKMapView!
     
     func set(itemInfo: IndicatorInfo,andViewModel viewModel:ItemsMapViewModel, andRouterController routerController: UIViewController) {
@@ -73,7 +73,7 @@ class ItemsMapViewController: UIViewController,IndicatorInfoProvider  {
 }
 extension ItemsMapViewController: MKMapViewDelegate
 {
-
+    
     func mapView(_ mapView: MKMapView,
                  didSelect view: MKAnnotationView)
     {
@@ -97,19 +97,19 @@ extension ItemsMapViewController: MKMapViewDelegate
         view.addSubview(calloutView)
         view.isUserInteractionEnabled = true
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
-    
+        
     }
     
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-            for subview in view.subviews
+        for subview in view.subviews
+        {
+            if subview.isKind(of: ItemCell.self)
             {
-                if subview.isKind(of: ItemCell.self)
-                {
-                    // remove cell on deselect
+                // remove cell on deselect
                 subview.removeFromSuperview()
-                }
             }
+        }
     }
     
     // user click to go to details page 

@@ -12,7 +12,7 @@ class ItemsMapRouter:NSObject {
     
     weak var controller: UIViewController?
     
-        override init() {
+    override init() {
         super.init()
     }
     
@@ -22,5 +22,5 @@ class ItemsMapRouter:NSObject {
         nextController.set(viewModel:viewModel)
         controller?.navigationController?.pushViewController(nextController, animated: true)
     }
-
+    
 }

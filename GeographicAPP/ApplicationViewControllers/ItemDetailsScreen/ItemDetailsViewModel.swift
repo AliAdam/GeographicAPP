@@ -9,7 +9,7 @@
 import  Foundation
 import  CoreLocation
 class ItemDetailsViewModel :NSObject{
-
+    
     fileprivate var item : Item?
     override init() {
         super.init()
@@ -42,7 +42,7 @@ class ItemDetailsViewModel :NSObject{
     var url:URL {
         return URL(string:self.item?.url ?? "")!
     }
-
+    
     var location :CLLocation {
         return CLLocation(latitude: (self.item?.latitude)!, longitude: (self.item?.longitude)!)
     }

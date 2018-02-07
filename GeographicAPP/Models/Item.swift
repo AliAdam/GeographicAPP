@@ -58,17 +58,17 @@ struct Item : Codable {
     
     init(locationID : Int , latitude : Double , longitude : Double , name : String , city : String , country : String , phone : String , type : String , email : String , url : String){
         
-          self.locationID  = locationID
-           self.latitude  = latitude
-           self.longitude  = longitude
+        self.locationID  = locationID
+        self.latitude  = latitude
+        self.longitude  = longitude
         location = CLLocationCoordinate2DMake(latitude,longitude)
-
-           self.name  = name
-           self.city  = city
-           self.country  = country
-           self.phone = phone
-           self.type = type
-           self.email  = email
-           self.url  = url
+        
+        self.name  = name
+        self.city  = city
+        self.country  = country
+        self.phone = phone
+        self.type = type
+        self.email  = email
+        self.url  = url
     }
 }

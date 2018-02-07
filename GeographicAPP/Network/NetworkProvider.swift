@@ -23,7 +23,7 @@ struct NetworkProvider {
             return
         }
         do{
-
+            
             let decoder = JSONDecoder()
             let itemsList = try decoder.decode([Item].self, from: data)
             completionHandler(.success(itemsList))
@@ -34,5 +34,5 @@ struct NetworkProvider {
         
         
     }
- 
+    
 }

@@ -18,8 +18,8 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     var cellTapHandler: (_ cell:ItemCell) -> Void = {_ in  }
-
-   
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.layer.cornerRadius = 10
@@ -33,7 +33,7 @@ class ItemCell: UITableViewCell {
         countryLabel.textColor = Colors.accentBrown.withAlphaComponent(0.8)
         cityLabel.textColor = Colors.brandGray.withAlphaComponent(0.8)
         phoneLabel.textColor = Colors.accentYellow.withAlphaComponent(0.8)
-
+        
     }
     
     func configureWith(item:Item) {
@@ -44,28 +44,28 @@ class ItemCell: UITableViewCell {
         self.phoneLabel.text = item.phone ?? ""
         self.zoomToLocation(location: item.location!)
         
-
+        
         
         
     }
     open class func height() -> CGFloat {
         return 145
     }
-  
+    
     // MARK - Action Handler
     @IBAction func callPhoneNumber(_ sender: Any) {
-       let res =  phoneLabel.text!.call()
+        let res =  phoneLabel.text!.call()
         if !res {
             AlertControllerHelper.showPhoneErroralertController()
         }
     }
     
-  
+    
     func zoomToLocation(location:CLLocationCoordinate2D) {
         let dropPin = MKPointAnnotation()
         dropPin.coordinate = location
         mapView!.addAnnotation(dropPin)
-    self.mapView?.setRegion(MKCoordinateRegionMakeWithDistance(location, 100, 100), animated: true)
+        self.mapView?.setRegion(MKCoordinateRegionMakeWithDistance(location, 100, 100), animated: true)
     }
     @IBAction func tapCellBTN(_ sender: Any) {
         self.cellTapHandler(self)

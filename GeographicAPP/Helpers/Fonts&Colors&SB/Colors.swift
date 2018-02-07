@@ -9,8 +9,8 @@ struct Colors {
     static let   brandGray  :UIColor = #colorLiteral(red: 0.370555222, green: 0.3705646992, blue: 0.3705595732, alpha: 1)   //5D5B5B
     static let   background  :UIColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)  // FFFFFF
     static let   whiteColor  :UIColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) // FFFFFF
-     static let   blackColor  :UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-
+    static let   blackColor  :UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    
 }
 
 

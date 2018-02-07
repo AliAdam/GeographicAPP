@@ -13,7 +13,7 @@ class SplashViewModelTests: XCTestCase {
     var spViewModel : SplashViewModel!
     override func setUp() {
         super.setUp()
-       spViewModel =  SplashViewModel()
+        spViewModel =  SplashViewModel()
         spViewModel.loadItemsList { (respnse) in
             
         }

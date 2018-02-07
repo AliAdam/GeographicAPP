@@ -28,7 +28,7 @@ class SplashRouter:NSObject {
         itemsListController.set(itemInfo: itemsListIndicatorInfo, andViewModel: itemsListViewModel, andRouterController: itemsTabBarController)
         itemsMapController.set(itemInfo: itemsMapIndicatorInfo, andViewModel: itemsMapViewModel, andRouterController: itemsTabBarController)
         itemsTabBarController.setControllers(childControllers: [itemsListController,itemsMapController])
-
+        
         controller?.navigationController?.setViewControllers([itemsTabBarController], animated: true)
     }
     // show alert controller

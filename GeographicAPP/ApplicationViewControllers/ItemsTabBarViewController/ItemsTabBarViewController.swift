@@ -5,9 +5,9 @@ import XLPagerTabStrip
 
 /// controller that hold item list and map screen
 class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeTabCell> {
-
+    
     // array of viewController will appear on the tab controller 
-   private var childControllers : [UIViewController]!
+    private var childControllers : [UIViewController]!
     
     func setControllers(childControllers:[UIViewController])  {
         self.childControllers = childControllers
@@ -23,28 +23,28 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
             return (UIScreen.main.bounds.width / 2) - 40
         })
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = LocalizableWords.locationsTilte
         let textAttributes:[NSAttributedStringKey:Any]? = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):Colors.whiteColor, NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):FontManager.APPLight.fontWith(size: 20)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-
+        
         self.setUpTap()
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemsTabBar
-      
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
     }
-   
-
-
+    
+    
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return Array(self.childControllers)
     }
-
+    
     // confgure tap cell
     override func configure(cell: HomeTabCell, for indicatorInfo: IndicatorInfo) {
         cell.iconImage.image = indicatorInfo.image?.withRenderingMode(.alwaysTemplate)
@@ -52,8 +52,8 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
         cell.titleLab.font = FontManager.APPLight.fontWith(size: 13)
         cell.iconImage.tintColor = Colors.brandGray//.withAlphaComponent(0.8)
         cell.titleLab.textColor = Colors.brandGray//.withAlphaComponent(0.8)
-
-
+        
+        
     }
     
     // setup tap bar apperance

@@ -15,7 +15,7 @@ enum FontManager:String {
     case APPBold
     case APPLight
     
-   private var fontName:String {
+    private var fontName:String {
         return self.isRTL ? self.arabicFontName :self.englishFontName
     }
     
@@ -37,8 +37,8 @@ enum FontManager:String {
         }
     }
     
-   public func fontWith(size: CGFloat) -> UIFont {
-    let font = UIFont(name:self.fontName,size:size)
+    public func fontWith(size: CGFloat) -> UIFont {
+        let font = UIFont(name:self.fontName,size:size)
         return font!
     }
     

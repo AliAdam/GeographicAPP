@@ -12,7 +12,7 @@ import XCTest
 class ItemDetailsViewModelTest: XCTestCase {
     let item = MockData.items.first!
     var viewModel : ItemDetailsViewModel!
-
+    
     override func setUp() {
         super.setUp()
         viewModel = ItemDetailsViewModel(item: item)
@@ -34,8 +34,8 @@ class ItemDetailsViewModelTest: XCTestCase {
         XCTAssertEqual(viewModel.location.coordinate.latitude, item.latitude!, "location should not mutate data ")
         XCTAssertEqual(viewModel.location.coordinate.longitude, item.longitude!, "location should not mutate data ")
         XCTAssertEqual(viewModel.url.absoluteString, item.url, "url should not mutate data ")
-
-
+        
+        
         
         
         

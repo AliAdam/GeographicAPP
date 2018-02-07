@@ -8,12 +8,12 @@
 
 import  Foundation
 class ItemsListViewModel :NSObject{
-
+    
     fileprivate var itemsList : [Item]?
     override init() {
         super.init()
     }
-
+    
     // init the view model with list of item
     init(itemList:[Item]) {
         super.init()

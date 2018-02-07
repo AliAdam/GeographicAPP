@@ -33,7 +33,7 @@ extension XCUIApplication {
     var isDisplayingMailComposeView: Bool {
         return otherElements[AccessibilityIdentifier.MailComposeView].exists
     }
-
+    
 }
 
 extension XCUIElement {

@@ -16,7 +16,7 @@ class ItemsListViewController: UIViewController,IndicatorInfoProvider  {
     @IBOutlet var router: ItemsListRouter!
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     // this var hold tap item info title and image 
     var itemInfo: IndicatorInfo = "List"
     
@@ -63,7 +63,7 @@ extension ItemsListViewController: UITableViewDataSource,UITableViewDelegate {
         
         return self.viewModel.numberOfElement
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ItemCell.height()
     }
@@ -88,7 +88,7 @@ extension ItemsListViewController: UITableViewDataSource,UITableViewDelegate {
     func userClickItem(atIndex :Int) {
         print("\(atIndex) ")
         let item = self.viewModel.itemAtIndex(index:atIndex)
-
+        
         router.showDetailsScreen(item:item)
     }
 }

@@ -15,7 +15,7 @@ class SplashViewController: UIViewController  {
     // contrroler router to navigate to other controller or show messages
     @IBOutlet var router: SplashRouter!
     @IBOutlet weak var animatedView: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // set the router controller
@@ -23,19 +23,19 @@ class SplashViewController: UIViewController  {
         router.controller = self
         self.navigationController?.isNavigationBarHidden = true
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.SplashView
-
-
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // load items list
-            self.loadData()
+        self.loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
+    
     /// load item list and navigate to collection view on sucess
     // show error on fail
     func loadData()  {

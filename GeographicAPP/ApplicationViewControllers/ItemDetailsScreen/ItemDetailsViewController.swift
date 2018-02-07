@@ -26,7 +26,7 @@ class ItemDetailsViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title =  self.viewModel.itemName
-
+        
         // set the router controller
         router.controller = self
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemDetails
@@ -99,7 +99,7 @@ class ItemDetailsViewController: FormViewController {
                 $0.value = self.viewModel.email
                 $0.disabled = true
                 
-            }
+                }
                 .onCellSelection({ (cell, row) in
                     self.sendEmail(email: row.value!)
                 })
@@ -108,7 +108,7 @@ class ItemDetailsViewController: FormViewController {
                 $0.title = LocalizableWords.phone
                 $0.value = self.viewModel.phone
                 $0.disabled = true
-            }
+                }
                 .onCellSelection({ (cell, row) in
                     print("\(row.value ?? "")")
                     let res =  "\(row.value ?? "")".call()
@@ -121,7 +121,7 @@ class ItemDetailsViewController: FormViewController {
                 $0.title = LocalizableWords.url
                 $0.value = self.viewModel.url
                 $0.disabled = true
-            }
+                }
                 .onCellSelection({ (cell, row) in
                     self.openUrl(url: row.value!)
                 })
@@ -150,7 +150,7 @@ extension ItemDetailsViewController: MFMailComposeViewControllerDelegate {
     func openUrl(url:URL){
         //  will open the url inside app with in  SFSafariViewController
         // this is not the best soulution for sure i just use it on the task for it's simpelicity
-            let vc = SFSafariViewController(url: url)
+        let vc = SFSafariViewController(url: url)
         vc.view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.safariView
         self.navigationController?.show(vc, sender: self)
     }
