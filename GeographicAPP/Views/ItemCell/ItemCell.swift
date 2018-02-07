@@ -54,7 +54,10 @@ class ItemCell: UITableViewCell {
   
     // MARK - Action Handler
     @IBAction func callPhoneNumber(_ sender: Any) {
-        phoneLabel.text!.call()
+       let res =  phoneLabel.text!.call()
+        if !res {
+            AlertControllerHelper.showPhoneErroralertController()
+        }
     }
     
   

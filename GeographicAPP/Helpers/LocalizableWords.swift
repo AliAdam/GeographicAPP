@@ -24,6 +24,8 @@ struct LocalizableWords  {
     static let map = "Map"
     static let WelcomeMessage =  "Welcome to"
     static let emailerrorMessage =  "Can not send email"
+    static let phoneerrorMessage =  "Can not call phone"
+
     static let name = "Name"
     static let country = "Country"
     static let city = "City"

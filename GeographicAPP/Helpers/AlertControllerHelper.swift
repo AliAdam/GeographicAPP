@@ -17,4 +17,20 @@ final class AlertControllerHelper {
         alertController.addAction(UIAlertAction(title: LocalizableWords.ok, style: .default))
         viewController.present(alertController, animated: true)
     }
+    
+    static func showPhoneErroralertController() {
+        let alert = UIAlertController(title: LocalizableWords.errorMessageTile, message:LocalizableWords.phoneerrorMessage , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: LocalizableWords.ok, style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+            print("")
+        }))
+        DispatchQueue.main.async(execute: {
+            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+            
+        })
+        
+    }
+    
+    
+    
+    
 }

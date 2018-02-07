@@ -111,7 +111,10 @@ class ItemDetailsViewController: FormViewController {
             }
                 .onCellSelection({ (cell, row) in
                     print("\(row.value ?? "")")
-                      "\(row.value ?? "")".call()
+                    let res =  "\(row.value ?? "")".call()
+                    if !res {
+                        AlertControllerHelper.showPhoneErroralertController()
+                    }
                     
                 })
             <<< URLRow(LocalizableWords.url) {
