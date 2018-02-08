@@ -42,6 +42,14 @@ extension StoryboardSceneType {
 
 /// enum contain refrence of all screens on the app
 enum StoryboardScene {
+    
+    enum InstantiateInitialViewController: StoryboardSceneType {
+        static let storyboardName = "Main"
+        static let viewController = "InitialViewController"
+        static func initialViewController() -> UINavigationController {
+            return  viewController(withIdentifier: viewController) as! UINavigationController
+        }
+    }
     enum SplashController: StoryboardSceneType {
         static let storyboardName = "Main"
         static let viewController = "SplashViewController"

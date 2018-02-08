@@ -18,7 +18,7 @@ class ItemDetailsRouter:NSObject {
     
     // show alert controller
     func showEmailErrorAlert() {
-        AlertControllerHelper.showAlert(withTitle: LocalizableWords.errorMessageTile, message: LocalizableWords.emailerrorMessage, on: controller!)
+        AlertControllerHelper.showAlert(withTitle: LocalizableWords().errorMessageTile, message: LocalizableWords().emailerrorMessage, on: controller!)
     }
     
 }

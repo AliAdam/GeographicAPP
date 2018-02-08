@@ -14,8 +14,8 @@ class LocationService: NSObject , CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
     var currentLocation :CLLocation = CLLocation(latitude: 0.0,longitude: 0.0)
     lazy  var  alertController :UIAlertController = {
-        let alert = UIAlertController(title: LocalizableWords.errorMessageTile, message:LocalizableWords.gpsErrorMessage , preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: LocalizableWords.goToSettingMessage, style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+        let alert = UIAlertController(title: LocalizableWords().errorMessageTile, message:LocalizableWords().gpsErrorMessage , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: LocalizableWords().goToSettingMessage, style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
             print("")
             UIApplication.shared.open(NSURL(string:UIApplicationOpenSettingsURLString)! as URL, options:[:], completionHandler: { (result) in
                 
@@ -44,7 +44,7 @@ class LocationService: NSObject , CLLocationManagerDelegate {
         // Otherwise present a Local Notification
         
         let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: LocalizableWords.WelcomeMessage,arguments: nil)
+        content.title = NSString.localizedUserNotificationString(forKey: LocalizableWords().WelcomeMessage,arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey: region.identifier, arguments: nil)
         content.sound = UNNotificationSound.default()
         content.setValue(true, forKey: "shouldAlwaysAlertWhileAppIsForeground")

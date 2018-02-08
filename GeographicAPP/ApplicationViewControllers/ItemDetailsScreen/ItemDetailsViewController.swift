@@ -25,12 +25,21 @@ class ItemDetailsViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title =  self.viewModel.itemName
-        
         // set the router controller
         router.controller = self
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemDetails
         setUpForm()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setUpNavigation()
+        
     }
     
     // create a form  to show details on it
@@ -42,6 +51,7 @@ class ItemDetailsViewController: FormViewController {
             cell.textField.font = FontManager.APPRegular.fontWith(size:17)
             cell.textLabel?.font = FontManager.APPLight.fontWith(size:20)
             cell.isEditing = false
+             cell.textField.tag = -1
             
             
         }
@@ -54,20 +64,7 @@ class ItemDetailsViewController: FormViewController {
             
             
         }
-        EmailRow.defaultCellUpdate = { cell, row in
-            cell.detailTextLabel?.textColor = Colors.brandGray
-            cell.textLabel?.textColor = Colors.brandColor
-            cell.detailTextLabel?.font = FontManager.APPRegular.fontWith(size:17)
-            cell.textLabel?.font = FontManager.APPLight.fontWith(size:20)
-            cell.isEditing = false
-        }
-        PhoneRow.defaultCellUpdate = { cell, row in
-            cell.detailTextLabel?.textColor = Colors.brandGray
-            cell.textLabel?.textColor = Colors.brandColor
-            cell.detailTextLabel?.font = FontManager.APPRegular.fontWith(size:17)
-            cell.textLabel?.font = FontManager.APPLight.fontWith(size:20)
-            cell.isEditing = false
-        }
+    
         
         LocationRow.defaultCellUpdate = { cell, row in
             cell.detailTextLabel?.textColor = Colors.brandGray
@@ -81,26 +78,26 @@ class ItemDetailsViewController: FormViewController {
             
             Section()
             
-            <<< LabelRow (LocalizableWords.name) {
-                $0.title = LocalizableWords.name
+            <<< LabelRow (LocalizableWords().name) {
+                $0.title = LocalizableWords().name
                 $0.value = self.viewModel.itemName
             }
-            <<< LabelRow (LocalizableWords.country) {
-                $0.title = LocalizableWords.country
+            <<< LabelRow (LocalizableWords().country) {
+                $0.title = LocalizableWords().country
                 $0.value = self.viewModel.countryName
             }
-            <<< LabelRow (LocalizableWords.city) {
-                $0.title = LocalizableWords.city
+            <<< LabelRow (LocalizableWords().city) {
+                $0.title = LocalizableWords().city
                 $0.value = self.viewModel.cityName
             }
             
-            <<< LabelRow (LocalizableWords.type) {
-                $0.title = LocalizableWords.type
+            <<< LabelRow (LocalizableWords().type) {
+                $0.title = LocalizableWords().type
                 $0.value = self.viewModel.type
             }
             
-            <<< EmailRow (LocalizableWords.email) {
-                $0.title = LocalizableWords.email
+            <<< LabelRow (LocalizableWords().email) {
+                $0.title = LocalizableWords().email
                 $0.value = self.viewModel.email
                 $0.disabled = true
                 
@@ -109,8 +106,8 @@ class ItemDetailsViewController: FormViewController {
                     self.sendEmail(email: row.value!)
                 })
             
-            <<< PhoneRow (LocalizableWords.phone) {
-                $0.title = LocalizableWords.phone
+            <<< LabelRow (LocalizableWords().phone) {
+                $0.title = LocalizableWords().phone
                 $0.value = self.viewModel.phone
                 $0.disabled = true
                 }
@@ -122,28 +119,32 @@ class ItemDetailsViewController: FormViewController {
                     }
                     
                 })
-            <<< URLRow(LocalizableWords.url) {
-                $0.title = LocalizableWords.url
+            <<< URLRow(LocalizableWords().url) {
+                $0.title = LocalizableWords().url
                 $0.value = self.viewModel.url
                 $0.disabled = true
+                
                 }
                 .onCellSelection({ (cell, row) in
                     self.openUrl(url: row.value!)
                 })
             
-            <<< LocationRow(LocalizableWords.location){
-                $0.title = LocalizableWords.location
+            <<< LocationRow(LocalizableWords().location){
+                $0.title = LocalizableWords().location
                 $0.value = self.viewModel.location
         }
-        
-        
-        
-        
+    }
+
+    
+    @IBAction func switchLangAction(_ sender: Any) {
+        Globel.sharedInstance.setUserWasInDetailsScreen(value: true)
+        Localizer.switchTheLanguage()
         
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func setUpNavigation()  {
+        self.title =  self.viewModel.itemName
+        let textAttributes:[NSAttributedStringKey:Any]? = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):Colors.whiteColor, NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):FontManager.APPLight.fontWith(size: 17)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
 }
@@ -170,8 +171,8 @@ extension ItemDetailsViewController: MFMailComposeViewControllerDelegate {
         composeVC.view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.MailComposeView
         composeVC.mailComposeDelegate = self
         composeVC.setToRecipients([email])
-        composeVC.setSubject("")
-        composeVC.setMessageBody("", isHTML: false)
+        composeVC.setSubject("FeedBack")
+        composeVC.setMessageBody("FeedBack", isHTML: false)
         self.present(composeVC, animated: true, completion: nil)
         
     }

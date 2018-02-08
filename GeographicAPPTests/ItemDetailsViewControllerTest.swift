@@ -28,14 +28,14 @@ class ItemDetailsViewControllerTest: XCTestCase {
     
     func testdetailsText() {
         let valuesDictionary = self.detailVC.form.values()
-        XCTAssertTrue((valuesDictionary[LocalizableWords.name] as! String) == self.viewModel.itemName, "name title should hold item name" )
-        XCTAssertTrue((valuesDictionary[LocalizableWords.country] as! String) == self.viewModel.countryName, "country title should hold item name" )
-        XCTAssertTrue((valuesDictionary[LocalizableWords.city] as! String) == self.viewModel.cityName, "city title should hold item name" )
-        XCTAssertTrue((valuesDictionary[LocalizableWords.email] as! String) == self.viewModel.email, "email title should hold item name" )
-        XCTAssertTrue((valuesDictionary[LocalizableWords.phone] as! String) == self.viewModel.phone, "phone title should hold item name" )
-        XCTAssertTrue((valuesDictionary[LocalizableWords.url] as! URL) == self.viewModel.url, "url title should hold item name" )
-        XCTAssertTrue((valuesDictionary[LocalizableWords.location] as! CLLocation ).coordinate.longitude == self.viewModel.location.coordinate.longitude, "location title should hold item name" )
-        XCTAssertTrue((valuesDictionary[LocalizableWords.location] as! CLLocation ).coordinate.latitude == self.viewModel.location.coordinate.latitude, "location title should hold item name" )
+        XCTAssertTrue((valuesDictionary[LocalizableWords().name] as! String) == self.viewModel.itemName, "name title should hold item name" )
+        XCTAssertTrue((valuesDictionary[LocalizableWords().country] as! String) == self.viewModel.countryName, "country title should hold item name" )
+        XCTAssertTrue((valuesDictionary[LocalizableWords().city] as! String) == self.viewModel.cityName, "city title should hold item name" )
+        XCTAssertTrue((valuesDictionary[LocalizableWords().email] as! String) == self.viewModel.email, "email title should hold item name" )
+        XCTAssertTrue((valuesDictionary[LocalizableWords().phone] as! String) == self.viewModel.phone, "phone title should hold item name" )
+        XCTAssertTrue((valuesDictionary[LocalizableWords().url] as! URL) == self.viewModel.url, "url title should hold item name" )
+        XCTAssertTrue((valuesDictionary[LocalizableWords().location] as! CLLocation ).coordinate.longitude == self.viewModel.location.coordinate.longitude, "location title should hold item name" )
+        XCTAssertTrue((valuesDictionary[LocalizableWords().location] as! CLLocation ).coordinate.latitude == self.viewModel.location.coordinate.latitude, "location title should hold item name" )
         
     }
     

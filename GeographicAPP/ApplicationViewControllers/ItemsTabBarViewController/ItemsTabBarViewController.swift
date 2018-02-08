@@ -26,20 +26,21 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = LocalizableWords.locationsTilte
-        let textAttributes:[NSAttributedStringKey:Any]? = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):Colors.whiteColor, NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):FontManager.APPLight.fontWith(size: 20)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
+        self.navigationController?.isNavigationBarHidden = false
         self.setUpTap()
         view.accessibilityIdentifier = LocalizableWords.AccessibilityIdentifier.ItemsTabBar
-        
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+    override func viewDidAppear(_ animated: Bool) {
+         super.viewDidAppear(animated)
+        setUpNavigation()
     }
     
     
+    func setUpNavigation()  {
+        self.title = LocalizableWords().locationsTilte
+        let textAttributes:[NSAttributedStringKey:Any]? = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):Colors.whiteColor, NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):FontManager.APPLight.fontWith(size: 25)]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return Array(self.childControllers)
@@ -58,6 +59,7 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
     
     // setup tap bar apperance
     func setUpTap() {
+        self.containerView.backgroundColor = Colors.brandGray
         settings.style.buttonBarBackgroundColor = Colors.whiteColor
         settings.style.buttonBarItemBackgroundColor = Colors.whiteColor
         settings.style.selectedBarBackgroundColor = Colors.whiteColor
@@ -74,4 +76,9 @@ class ItemsTabBarViewController: BaseButtonBarPagerTabStripViewController <HomeT
         }
         
     }
+
+    @IBAction func switchLangAction(_ sender: Any) {
+        Localizer.switchTheLanguage()
+    }
+    
 }

@@ -86,7 +86,7 @@ extension ItemsMapViewController: MKMapViewDelegate
         ///
         let views = Bundle.main.loadNibNamed(ItemCell.cellIdentifier(), owner: nil, options: nil)
         let calloutView = views?[0] as! ItemCell
-        let index = (view.annotation!.title! as! NSString ).integerValue
+        let index = Int(view.annotation!.title!!)! // as! NSString).integerValue
         let item =  self.viewModel.itemAtIndex(index: index)
         calloutView.configureWith(item: item)
         calloutView.tag = index
@@ -115,6 +115,7 @@ extension ItemsMapViewController: MKMapViewDelegate
     // user click to go to details page 
     func userClickItem(atIndex :Int) {
         print("\(atIndex) ")
+        Globel.sharedInstance.setItemIndex(value: atIndex)
         let item = self.viewModel.itemAtIndex(index:atIndex)
         
         router.showDetailsScreen(item:item)

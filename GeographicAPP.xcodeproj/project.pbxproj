@@ -49,6 +49,10 @@
 		41EAC22E2029E57700A47D9D /* Dubai-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41EAC22A2029E57700A47D9D /* Dubai-Light.ttf */; };
 		41EAC22F2029E57700A47D9D /* Dubai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41EAC22B2029E57700A47D9D /* Dubai-Bold.ttf */; };
 		41EAC2332029F86500A47D9D /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EAC2322029F86400A47D9D /* ItemCell.xib */; };
+		41EC6E35202C767900C2B7F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41EC6E2D202C767900C2B7F3 /* Localizable.strings */; };
+		41EC6E36202C767900C2B7F3 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6E30202C767900C2B7F3 /* Language.swift */; };
+		41EC6E37202C767900C2B7F3 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6E31202C767900C2B7F3 /* Localizer.swift */; };
+		41EC6E3C202C93D900C2B7F3 /* Globel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6E3B202C93D900C2B7F3 /* Globel.swift */; };
 		72799E09202ABE740043AC05 /* ItemsListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72799E08202ABE740043AC05 /* ItemsListViewModelTest.swift */; };
 		72799E0B202ACA4B0043AC05 /* ItemDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72799E0A202ACA4B0043AC05 /* ItemDetailsViewModelTest.swift */; };
 		72799E0D202ACDD20043AC05 /* ItemDetailsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72799E0C202ACDD20043AC05 /* ItemDetailsViewControllerTest.swift */; };
@@ -126,6 +130,11 @@
 		41EAC22A2029E57700A47D9D /* Dubai-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dubai-Light.ttf"; sourceTree = "<group>"; };
 		41EAC22B2029E57700A47D9D /* Dubai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dubai-Bold.ttf"; sourceTree = "<group>"; };
 		41EAC2322029F86400A47D9D /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		41EC6E2E202C767900C2B7F3 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41EC6E2F202C767900C2B7F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41EC6E30202C767900C2B7F3 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		41EC6E31202C767900C2B7F3 /* Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
+		41EC6E3B202C93D900C2B7F3 /* Globel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globel.swift; sourceTree = "<group>"; };
 		424A5219869E8CFB2D6F780B /* Pods-GeographicAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeographicAPPTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeographicAPPTests/Pods-GeographicAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46B9998836FFFDA31CC0527A /* Pods-GeographicAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeographicAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeographicAPP/Pods-GeographicAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		72799E08202ABE740043AC05 /* ItemsListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewModelTest.swift; sourceTree = "<group>"; };
@@ -234,6 +243,7 @@
 		41EAC1BD2029D73F00A47D9D /* GeographicAPP */ = {
 			isa = PBXGroup;
 			children = (
+				41EC6E2C202C767900C2B7F3 /* Localization */,
 				41EAC1E62029D79200A47D9D /* ApplicationViewControllers */,
 				41EAC1E02029D79200A47D9D /* Views */,
 				41EAC1D62029D79200A47D9D /* Helpers */,
@@ -274,6 +284,7 @@
 				41EAC1D72029D79200A47D9D /* Extension */,
 				41EAC1DB2029D79200A47D9D /* AlertControllerHelper.swift */,
 				41EAC1DC2029D79200A47D9D /* MockLoader.swift */,
+				41EC6E3B202C93D900C2B7F3 /* Globel.swift */,
 				412C2BC6202A0E8D0041A7AB /* LocationService.swift */,
 				41EAC1DF2029D79200A47D9D /* LocalizableWords.swift */,
 			);
@@ -399,6 +410,16 @@
 			path = ItemCell;
 			sourceTree = "<group>";
 		};
+		41EC6E2C202C767900C2B7F3 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				41EC6E2D202C767900C2B7F3 /* Localizable.strings */,
+				41EC6E30202C767900C2B7F3 /* Language.swift */,
+				41EC6E31202C767900C2B7F3 /* Localizer.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		72799E15202AE3E90043AC05 /* GeographicAPPUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +539,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 41EAC1B22029D73F00A47D9D;
 			productRefGroup = 41EAC1BC2029D73F00A47D9D /* Products */;
@@ -545,6 +567,7 @@
 			files = (
 				41EAC1F22029D79200A47D9D /* DMLocations.json in Resources */,
 				41EAC1C92029D73F00A47D9D /* LaunchScreen.storyboard in Resources */,
+				41EC6E35202C767900C2B7F3 /* Localizable.strings in Resources */,
 				41EAC2092029DF5C00A47D9D /* HomeTabCell.xib in Resources */,
 				41EAC22F2029E57700A47D9D /* Dubai-Bold.ttf in Resources */,
 				41EAC1C62029D73F00A47D9D /* Assets.xcassets in Resources */,
@@ -658,11 +681,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GeographicAPP/Pods-GeographicAPP-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,16 +728,19 @@
 				41EAC2262029E55700A47D9D /* FontManager.swift in Sources */,
 				41EAC1FB2029D79200A47D9D /* ItemCell.swift in Sources */,
 				41EAC2182029E0A400A47D9D /* ItemsListViewModel.swift in Sources */,
+				41EC6E37202C767900C2B7F3 /* Localizer.swift in Sources */,
 				41EAC2192029E0A400A47D9D /* ItemsListRouter.swift in Sources */,
 				41EAC21D2029E0A400A47D9D /* ItemsMapViewController.swift in Sources */,
 				41EAC1BF2029D73F00A47D9D /* AppDelegate.swift in Sources */,
 				412C2BCF202A314B0041A7AB /* LocationRow.swift in Sources */,
 				41EAC21F2029E0A400A47D9D /* ItemsMapRouter.swift in Sources */,
 				41EAC1F72029D79200A47D9D /* MockLoader.swift in Sources */,
+				41EC6E36202C767900C2B7F3 /* Language.swift in Sources */,
 				412C2BE0202A51180041A7AB /* MockData.swift in Sources */,
 				41EAC21E2029E0A400A47D9D /* ItemsMapViewModel.swift in Sources */,
 				41EAC2172029E0A400A47D9D /* ItemsListViewController.swift in Sources */,
 				41EAC1FA2029D79200A47D9D /* LocalizableWords.swift in Sources */,
+				41EC6E3C202C93D900C2B7F3 /* Globel.swift in Sources */,
 				41EAC2082029DF5C00A47D9D /* HomeTabCell.swift in Sources */,
 				41EAC1EF2029D79200A47D9D /* NetworkResponse.swift in Sources */,
 				41EAC2222029E44100A47D9D /* ItemsTabBarViewController.swift in Sources */,
@@ -762,6 +790,15 @@
 				41EAC1C82029D73F00A47D9D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		41EC6E2D202C767900C2B7F3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41EC6E2E202C767900C2B7F3 /* ar */,
+				41EC6E2F202C767900C2B7F3 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  GeographicAPP
+
+  Created by Ali Adam on 2/8/18.
+  Copyright © 2018 Ali Adam. All rights reserved.
+*/
+
+"" = "" ;
+
+
+"Try Again" = "Try Again";
+"Okay" = "Okay";
+"Yes" = "Yes";
+"Cancel" = "Cancel";
+"Error Occured"  = "Error Occured";
+
+"Can Not Load And parse Please Try Again later" = "Can Not Load And parse Please Try Again later";
+
+"GPS access is restricted. In order to use Monitor Region, please enable Always GPS in the Settigs app under Privacy, Location Services." =  "GPS access is restricted. In order to use Monitor Region, please enable Always GPS in the Settigs app under Privacy, Location Services.";
+"Go to Settings now"  =  "Go to Settings now";
+"List"  = "List";
+"Map" = "Map";
+"Welcome to" =  "Welcome to";
+"Can not send email"  =  "Can not send email";
+"Can not call phone" =  "Can not call phone";
+
+"Name"  = "Name";
+"Country"  = "Country";
+"City"  = "City";
+"Email" = "Email";
+"Phone" = "Phone";
+"Location"  = "Location";
+"URL"  = "URL";
+"Type"  = "Type";
+"locations"  = "locations";
+

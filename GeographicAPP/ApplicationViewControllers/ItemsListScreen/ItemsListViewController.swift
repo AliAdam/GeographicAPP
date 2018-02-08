@@ -38,7 +38,7 @@ class ItemsListViewController: UIViewController,IndicatorInfoProvider  {
     func setTableView()  {
         tableView.register(ItemCell.self, forCellReuseIdentifier: ItemCell.cellIdentifier())
         tableView.register(UINib(nibName: ItemCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: ItemCell.cellIdentifier())
-        tableView.backgroundColor = Colors.brandGray.withAlphaComponent(0.4)
+        tableView.backgroundColor = Colors.brandGray
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -48,6 +48,10 @@ class ItemsListViewController: UIViewController,IndicatorInfoProvider  {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
     }
+    
+    
+    /// go to item details if user change language from it
+    
 }
 
 
@@ -87,8 +91,8 @@ extension ItemsListViewController: UITableViewDataSource,UITableViewDelegate {
     // user click on cell  to go to details page
     func userClickItem(atIndex :Int) {
         print("\(atIndex) ")
+        Globel.sharedInstance.setItemIndex(value: atIndex)
         let item = self.viewModel.itemAtIndex(index:atIndex)
-        
         router.showDetailsScreen(item:item)
     }
 }

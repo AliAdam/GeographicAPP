@@ -20,6 +20,7 @@ class GeographicAPPUITests: XCTestCase {
     
     // test Screens and Buttons 
     func testGoingThroughAPP() {
+        app.launchArguments = ["-AppleLanguages", "(en)", "-AppleLocale", "en_EN"]
         app.launch()
         // testing open first page
         wait(for: 2)
@@ -58,7 +59,7 @@ class GeographicAPPUITests: XCTestCase {
         
         // test going back to items list
         var navButtons = app.navigationBars.buttons
-        XCTAssert(navButtons.count == 1)
+        XCTAssert(navButtons.count == 2)
         navButtons.element(boundBy: 0).tap()
         wait(for: 2)
         XCTAssertTrue(app.isDisplayingItemList)
@@ -109,8 +110,10 @@ class GeographicAPPUITests: XCTestCase {
             XCTAssert(navButtons.count > 0)
             navButtons.element(boundBy: 0).tap()
             wait(for: 2)
-            app.sheets.buttons.element(boundBy: 0).tap()
-            wait(for: 1)
+            if app.sheets.buttons.element(boundBy: 0).exists {
+                 app.sheets.buttons.element(boundBy: 0).tap()
+                wait(for: 1)
+            }
             XCTAssertTrue(app.isDisplayingItemDetails)
             
             // call phone item details

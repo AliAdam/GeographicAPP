@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  GeographicAPP
+
+  Created by Ali Adam on 2/8/18.
+  Copyright © 2018 Ali Adam. All rights reserved.
+*/
+
+
+
+"Try Again" = "محاولة اخري";
+"Okay" = "موافق";
+"Yes" = "نعم";
+"Cancel" = "الغاء";
+"Error Occured"  = "حدث خطأ ";
+
+"Can Not Load And parse Please Try Again later" = "لم نتمكن من تحميل البيانات ";
+
+"GPS access is restricted. In order to use Monitor Region, please enable Always GPS in the Settigs app under Privacy, Location Services." =  "يجب اعطاء صلاحية الموقع دائما لنتمكن من ارسال الاشعارات";
+"Go to Settings now"  =  "الاعدادت";
+"List"  = "قائمة";
+"Map" = "خريطة";
+"Welcome to" =  " مرحبا في ";
+"Can not send email"  =  "لم نتمكن من ارسال الايميل";
+"Can not call phone" =  "لم نتمكن من الاتصال";
+
+"Name"  = "الاسم";
+"Country"  = "الدولة";
+"City"  = "المدينة";
+"Email" = "البريد الالكتروني";
+"Phone" = "التليفون";
+"Location"  = "العنوان";
+"URL"  = "الموقع";
+"Type"  = "النوع";
+"locations"  = "المواقع";
